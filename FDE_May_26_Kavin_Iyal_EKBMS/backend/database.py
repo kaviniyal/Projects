@@ -1,0 +1,31 @@
+"""
+Database configuration for the Enterprise Knowledge Base Management System.
+
+Uses SQLAlchemy ORM with SQLite as the default database for Phase 1.
+The connection string can be swapped for PostgreSQL or MySQL without
+changing application code.
+"""
+
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+SQLALCHEMY_DATABASE_URL = "sqlite:///./knowledge_base.db"
+
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL,
+    connect_args={"check_same_thread": False},
+)
+
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+Base = declarative_base()
+
+
+def get_db():
+    """FastAPI dependency that yields a database session."""
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
