@@ -1,0 +1,4 @@
+# Top-level requirements file — points to the backend's requirements.
+# This is here for convenience so you can run `pip install -r requirements.txt`
+# from the project root.
+-r backend/requirements.txt
