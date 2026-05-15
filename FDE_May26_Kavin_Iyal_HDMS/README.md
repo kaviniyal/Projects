@@ -214,25 +214,3 @@ curl -X PUT http://localhost:8000/tickets/1 \
 curl -X DELETE http://localhost:8000/tickets/1
 ```
 
-## Out of Scope for Phase 1
-
-These features are intentionally deferred to future phases:
-
-- Authentication and authorization
-- Email notifications
-- AI / ML integrations
-- Analytics dashboards
-- Semantic / RAG search
-- Cloud deployment
-
-## Future Enhancements
-
-The architecture supports:
-- Data engineering pipelines on top of the tickets database
-- Analytics dashboards
-- AI-powered semantic search (e.g., embedding the `description` column)
-- RAG-based enterprise support assistant
-
-## License
-
-This project is part of a capstone exercise and is provided as-is for educational purposes.
