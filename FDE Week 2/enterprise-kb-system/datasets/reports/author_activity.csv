@@ -1,0 +1,6 @@
+user_id,author,email,department,article_count,total_views,avg_rating
+6,David Brown,david.brown@company.com,IT,32,24610,0
+4,Carol Williams,carol.williams@company.com,HR,28,30510,0
+3,Bob Smith,bob.smith@company.com,HR,22,14250,0
+5,Emma Davis,emma.davis@company.com,IT,22,31100,0
+2,Alice Johnson,alice.johnson@company.com,HR,16,14650,0

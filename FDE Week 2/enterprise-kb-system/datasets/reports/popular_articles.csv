@@ -1,0 +1,21 @@
+article_id,title,category,author,views,avg_rating,rating_count
+12,Password Reset Procedure,IT Support,Emma Davis,3100,0,0
+17,Multi-Factor Authentication Setup,IT Support,Emma Davis,2670,0,0
+107,Remote Work Security Guide,IT Support,Emma Davis,2450,0,0
+11,VPN Setup Guide,IT Support,Emma Davis,2340,0,0
+32,How to Use Microsoft Teams,Training Materials,Carol Williams,2230,0,0
+77,Data Visualization with Power BI,Training Materials,Carol Williams,2100,0,0
+20,Cybersecurity Awareness Training,IT Support,Emma Davis,2010,0,0
+15,Email Configuration in Outlook,IT Support,Emma Davis,1890,0,0
+36,Excel Training for Beginners,Training Materials,Carol Williams,1890,0,0
+70,Acceptable Use Policy,IT Support,Emma Davis,1890,0,0
+76,Introduction to Python for Analysts,Training Materials,Carol Williams,1780,0,0
+108,Employee Self-Service Portal Guide,HR Policies,Alice Johnson,1780,0,0
+31,New Employee IT Checklist,Training Materials,Carol Williams,1670,0,0
+3,Work From Home Policy,HR Policies,Alice Johnson,1560,0,0
+51,Incident Management Procedure,Operations,David Brown,1560,0,0
+18,ServiceNow Ticketing Guide,IT Support,Emma Davis,1450,0,0
+104,Security Incident Response Plan,Infrastructure,David Brown,1450,0,0
+38,Data Privacy Training,Training Materials,Carol Williams,1430,0,0
+78,Agile and Scrum Guide,Training Materials,Carol Williams,1430,0,0
+24,Cloud Infrastructure — AWS Overview,Infrastructure,Emma Davis,1340,0,0
