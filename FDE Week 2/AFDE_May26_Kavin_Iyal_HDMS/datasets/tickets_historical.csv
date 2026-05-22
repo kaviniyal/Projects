@@ -1,0 +1,271 @@
+ticket_id,employee_name,department,issue_category,description,priority,status,resolution_notes,created_at,resolved_at
+TKT-0178,Wendy Allen,Operations,VPN Issue,"VPN certificate expired, cannot authenticate",Low,Open,,2024-06-09 00:00:00,
+TKT-0187,George Carter,Marketing,VPN Issue,Split tunneling not working after recent update,Low,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-09-24 00:00:00,2024-09-26 00:00:00
+TKT-0104,Michael Campbell,Customer Support,SW Installation,Python and pip environment setup required,High,Resolved,Software installed successfully with admin credentials. License activated.,2024-12-19 00:00:00,2024-12-21 00:00:00
+TKT-0269,Julia Roberts,Finance,Email Access,Emails going to spam folder from internal senders,Medium,In Progress,,2025-01-14 00:00:00,
+TKT-0060,Zach King,Sales,laptop issue,Keyboard keys sticking and unresponsive,Low,Closed,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2025-03-07 00:00:00,2025-03-18 00:00:00
+TKT-0193,Victor Hall,Engineering,VPN Issue,"VPN certificate expired, cannot authenticate",Medium,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2025-04-02 00:00:00,2025-04-12 00:00:00
+TKT-0025,Laura Phillips,Engineering,Laptop Issue,Laptop screen flickering and sometimes goes black,Low,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2024-05-31 00:00:00,2024-06-04 00:00:00
+TKT-0245,Wendy Allen,Operations,Hardware Req,Need replacement headset for customer calls,Medium,Open,,2024-09-01 00:00:00,
+TKT-0027,Kevin Turner,Operations,laptop issue,Touchpad not responding intermittently,High,Open,,2024-06-19 00:00:00,
+TKT-0226,Carlos Green,Finance,VPN Problem,VPN disconnects frequently during video calls,Medium,Closed,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-05-17 00:00:00,2024-05-27 00:00:00
+TKT-0103,Quinn Robinson,Engineering,Email Problem,Unable to access shared team mailbox,Medium,Open,,2024-11-26 00:00:00,
+TKT-0112,Grace Lee,Legal,Network Connectivity,DNS resolution failing for internal hostnames,High,In Progress,,2024-11-22 00:00:00,
+TKT-0055,Uma Walker,Finance,Software Installation,Need Microsoft Office 365 installed on new laptop,Low,Closed,Software installed successfully with admin credentials. License activated.,2024-08-06 00:00:00,2024-08-11 00:00:00
+TKT-0010,Julia Roberts,Finance,Password Reset,Admin portal login credentials not recognized,High,Open,,2024-05-17 00:00:00,
+TKT-0116,Fiona Nelson,Engineering,VPN Issue,VPN client throws authentication error on startup,Medium,In Progress,,2024-07-21 00:00:00,
+TKT-0067,Diana Baker,Legal,Email Access,Auto-reply not triggering despite being configured,Medium,Closed,Email configuration corrected in Exchange admin console. Access restored.,2024-12-13 00:00:00,2024-12-23 00:00:00
+TKT-0093,Xavier Young,Customer Support,Laptop Issue,Touchpad not responding intermittently,Medium,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2024-10-17 00:00:00,2024-10-23 00:00:00
+TKT-0015,Michael Campbell,Customer Support,VPN Issue,Cannot connect to VPN from home office,Critical,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2025-02-08 00:00:00,2025-02-22 00:00:00
+TKT-0115,Fiona Nelson,Engineering,Email Access,Calendar invites not appearing in inbox,Low,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2024-09-25 00:00:00,2024-10-03 00:00:00
+TKT-0195,Zach King,Sales,VPN Issue,VPN client throws authentication error on startup,Low,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2025-03-26 00:00:00,2025-04-08 00:00:00
+TKT-0052,Olivia Garcia,Legal,Password Reset,Admin portal login credentials not recognized,Medium,In Progress,,2024-06-05 00:00:00,
+TKT-0040,Wendy Allen,Operations,Hardware Request,Need webcam for remote meetings,Medium,Open,,2025-02-03 00:00:00,
+TKT-0047,Tina Lewis,HR,Software Installation,Requesting installation of Adobe Creative Suite,Critical,Open,,2024-10-31 00:00:00,
+TKT-0160,Julia Roberts,Finance,Email Access,Emails going to spam folder from internal senders,Medium,In Progress,,2025-01-14 00:00:00,
+TKT-0170,Tina Lewis,HR,Hardware Request,Need replacement headset for customer calls,Low,Open,,2025-04-02 00:00:00,
+TKT-0065,Alice Johnson,Engineering,Hardware Request,Requesting standing desk converter,High,Closed,Hardware ordered and delivered. Setup completed by IT technician.,2024-08-21 00:00:00,2024-08-24 00:00:00
+TKT-0006,Samuel Rodriguez,Sales,Network Connectivity,No internet connection at workstation,High,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2025-04-26 00:00:00,2025-04-28 00:00:00
+TKT-0004,Victor Hall,Engineering,password_reset,"Password expired, cannot login to work systems",Low,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-10-31 00:00:00,2024-11-14 00:00:00
+TKT-0105,Olivia Garcia,Legal,Hardware Request,Requesting second monitor for better productivity,Medium,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2024-08-10 00:00:00,2024-08-17 00:00:00
+TKT-0169,Michael Campbell,Customer Support,Hardware Request,Requesting standing desk converter,Medium,Open,,2025-04-25 00:00:00,
+TKT-0003,Ian Perez,HR,Software Installation,"Zoom client not working properly, needs reinstall",Medium,Closed,Software installed successfully with admin credentials. License activated.,2024-07-21 00:00:00,2024-08-02 00:00:00
+TKT-0128,Yolanda Hernandez,Marketing,Hardware Request,Requesting USB hub for multiple device connections,High,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2025-02-02 00:00:00,2025-02-03 00:00:00
+TKT-0171,Emma Brown,Finance,VPN Issue,Unable to access internal resources via VPN,Low,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-08-19 00:00:00,2024-08-26 00:00:00
+TKT-0083,Yolanda Hernandez,Marketing,Software Installation,Need Microsoft Office 365 installed on new laptop,Low,Resolved,Software installed successfully with admin credentials. License activated.,2025-03-18 00:00:00,2025-03-22 00:00:00
+TKT-0041,Tina Lewis,HR,Email Access,Email signature not displaying correctly,High,Open,,2025-02-08 00:00:00,
+TKT-0048,Peter Martinez,Customer Support,Email Access,Outlook not syncing with Exchange server,Medium,Closed,Email configuration corrected in Exchange admin console. Access restored.,2025-03-14 00:00:00,2025-03-26 00:00:00
+TKT-0219,Mia Harris,Finance,Password Reset,Admin portal login credentials not recognized,Low,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-09-17 00:00:00,2024-09-19 00:00:00
+TKT-0266,Ian Perez,HR,Network Connectivity,Network printer not accessible from laptop,Medium,In Progress,,2024-07-24 00:00:00,
+TKT-0046,James Thomas,Marketing,Laptop Issue,Laptop screen flickering and sometimes goes black,Medium,Open,,2024-07-05 00:00:00,
+TKT-0155,Liam White,HR,VPN Issue,VPN client throws authentication error on startup,Low,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-08-30 00:00:00,2024-09-09 00:00:00
+TKT-0078,Yolanda Hernandez,Marketing,Password Reset,"SSO not working, redirecting to error page",Medium,Closed,Password reset completed via Active Directory. User notified with new credentials.,2024-12-27 00:00:00,2024-12-28 00:00:00
+TKT-0017,Karen Jackson,Sales,Software Installation,"Antivirus software outdated, requesting update",High,In Progress,,2025-01-12 00:00:00,
+TKT-0056,Bella Scott,HR,VPN Issue,VPN client throws authentication error on startup,Medium,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2025-04-09 00:00:00,2025-04-13 00:00:00
+TKT-0233,Mia Harris,Finance,Network Connectivity,DNS resolution failing for internal hostnames,Low,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-11-05 00:00:00,2024-11-13 00:00:00
+TKT-0246,Henry Taylor,Customer Support,pwd reset,Forgot password and need urgent reset,Low,Closed,Password reset completed via Active Directory. User notified with new credentials.,2025-03-12 00:00:00,2025-03-19 00:00:00
+TKT-0200,Karen Jackson,Sales,Password Reset,Two-factor authentication code not working,Medium,Closed,Password reset completed via Active Directory. User notified with new credentials.,2024-12-11 00:00:00,2024-12-12 00:00:00
+TKT-0111,Laura Phillips,Engineering,Software Installation,"Cannot install required development tools, admin rights needed",Critical,Resolved,Software installed successfully with admin credentials. License activated.,2024-11-26 00:00:00,2024-12-02 00:00:00
+TKT-0094,Diana Baker,Legal,pwd reset,Admin portal login credentials not recognized,High,In Progress,,2025-01-30 00:00:00,
+TKT-0141,Ian Perez,HR,Network Connectivity,Network printer not accessible from laptop,Medium,In Progress,,2024-07-24 00:00:00,
+TKT-0267,Victor Hall,Engineering,Laptop Issue,Laptop screen flickering and sometimes goes black,Low,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2025-02-24 00:00:00,2025-03-08 00:00:00
+TKT-0208,Victor Hall,Engineering,Network Connectivity,Ethernet port not detecting cable connection,Critical,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-07-11 00:00:00,2024-07-24 00:00:00
+TKT-0212,Peter Martinez,Customer Support,Email Problem,Outlook not syncing with Exchange server,Medium,In Progress,,2024-11-30 00:00:00,
+TKT-0235,Aaron Wright,Engineering,Network Connectivity,Network printer not accessible from laptop,Medium,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2025-04-14 00:00:00,2025-04-23 00:00:00
+TKT-0034,Fiona Nelson,Engineering,pwd reset,Account locked after multiple failed login attempts,Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-10-08 00:00:00,2024-10-09 00:00:00
+TKT-0114,Alice Johnson,Engineering,Email Access,Emails going to spam folder from internal senders,Medium,Open,,2024-11-02 00:00:00,
+TKT-0161,Bella Scott,HR,VPN Issue,"VPN certificate expired, cannot authenticate",High,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2025-02-07 00:00:00,2025-02-19 00:00:00
+TKT-0109,Uma Walker,Finance,Email Problem,Cannot receive emails since this morning,Critical,Closed,Email configuration corrected in Exchange admin console. Access restored.,2025-02-19 00:00:00,2025-03-01 00:00:00
+TKT-0019,Xavier Young,Customer Support,Network Connectivity,Network printer not accessible from laptop,High,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-05-01 00:00:00,2024-05-11 00:00:00
+TKT-0022,Isabella Anderson,Engineering,VPN Issue,Unable to access internal resources via VPN,Medium,In Progress,,2025-03-07 00:00:00,
+TKT-0100,Kevin Turner,Operations,HW Request,Requesting standing desk converter,Low,Closed,Hardware ordered and delivered. Setup completed by IT technician.,2025-03-07 00:00:00,2025-03-17 00:00:00
+TKT-0211,Nancy Parker,Marketing,SW Installation,Requesting installation of project management software,Medium,Open,,2025-01-19 00:00:00,
+TKT-0080,Bob Smith,Marketing,HW Request,Need webcam for remote meetings,Medium,In Progress,,2024-12-29 00:00:00,
+TKT-0256,Zach King,Sales,VPN Issue,"VPN connection extremely slow, affecting productivity",Medium,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2025-04-10 00:00:00,2025-04-15 00:00:00
+TKT-0002,Laura Phillips,Engineering,Software Install,Python and pip environment setup required,Low,Resolved,Software installed successfully with admin credentials. License activated.,2025-02-12 00:00:00,2025-02-16 00:00:00
+TKT-0070,Rachel Clark,Marketing,Software Installation,Need Microsoft Office 365 installed on new laptop,Low,In Progress,,2025-02-01 00:00:00,
+TKT-0205,Hannah Mitchell,Sales,Network Issue,Intermittent connection drops throughout the day,Medium,Closed,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-07-15 00:00:00,2024-07-29 00:00:00
+TKT-0259,Ethan Adams,Customer Support,Hardware Req,Requesting standing desk converter,High,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2024-06-08 00:00:00,2024-06-11 00:00:00
+TKT-0151,Wendy Allen,Operations,VPN,VPN disconnects frequently during video calls,Critical,Closed,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-06-16 00:00:00,2024-06-27 00:00:00
+TKT-0051,Grace Lee,Legal,SW Installation,"Cannot install required development tools, admin rights needed",Low,Closed,Software installed successfully with admin credentials. License activated.,2024-12-22 00:00:00,2024-12-28 00:00:00
+TKT-0146,Julia Roberts,Finance,Password Reset,"Password expired, cannot login to work systems",Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-12-24 00:00:00,2025-01-05 00:00:00
+TKT-0073,Kevin Turner,Operations,SW Installation,Python and pip environment setup required,Medium,Resolved,Software installed successfully with admin credentials. License activated.,2024-12-01 00:00:00,2024-12-10 00:00:00
+TKT-0166,David Wilson,HR,Hardware Request,Need webcam for remote meetings,Medium,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2024-08-17 00:00:00,2024-08-20 00:00:00
+TKT-0023,Noah Martin,Operations,Hardware Request,Need webcam for remote meetings,High,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2024-11-21 00:00:00,2024-12-02 00:00:00
+TKT-0181,Grace Lee,Legal,Password Reset,"Password expired, cannot login to work systems",Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-10-06 00:00:00,2024-10-18 00:00:00
+TKT-0191,Carol Davis,Sales,Password Reset,"Password expired, cannot login to work systems",Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-07-21 00:00:00,2024-07-27 00:00:00
+TKT-0238,Olivia Garcia,Legal,Software Installation,Python and pip environment setup required,High,Closed,Software installed successfully with admin credentials. License activated.,2024-09-06 00:00:00,2024-09-10 00:00:00
+TKT-0231,Uma Walker,Finance,Email Access,Auto-reply not triggering despite being configured,Medium,In Progress,,2024-10-01 00:00:00,
+TKT-0012,Zach King,Sales,Hardware Request,Requesting USB hub for multiple device connections,Low,Open,,2025-02-12 00:00:00,
+TKT-0008,Xavier Young,Customer Support,Password Reset,Account locked after multiple failed login attempts,High,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2025-04-15 00:00:00,2025-04-26 00:00:00
+TKT-0163,Grace Lee,Legal,Password Reset,Account locked after multiple failed login attempts,Medium,Closed,Password reset completed via Active Directory. User notified with new credentials.,2025-04-17 00:00:00,2025-04-25 00:00:00
+TKT-0242,Kevin Turner,Operations,Software Installation,"Cannot install required development tools, admin rights needed",Medium,Resolved,Software installed successfully with admin credentials. License activated.,2024-09-26 00:00:00,2024-10-07 00:00:00
+TKT-0037,Michael Campbell,Customer Support,VPN Problem,VPN disconnects frequently during video calls,Critical,In Progress,,2024-10-08 00:00:00,
+TKT-0120,Rachel Clark,Marketing,Network Connectivity,No internet connection at workstation,Medium,Closed,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-09-14 00:00:00,2024-09-28 00:00:00
+TKT-0232,Karen Jackson,Sales,Email Access,Cannot receive emails since this morning,Medium,Closed,Email configuration corrected in Exchange admin console. Access restored.,2025-01-16 00:00:00,2025-01-20 00:00:00
+TKT-0207,George Carter,Marketing,Software Installation,Need Microsoft Office 365 installed on new laptop,Low,In Progress,,2024-10-11 00:00:00,
+TKT-0110,Rachel Clark,Marketing,Laptop Issue,"Battery draining within 2 hours, needs replacement",Low,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2024-12-13 00:00:00,2024-12-18 00:00:00
+TKT-0125,George Carter,Marketing,Hardware Request,Need replacement headset for customer calls,Low,Closed,Hardware ordered and delivered. Setup completed by IT technician.,2024-06-21 00:00:00,2024-06-30 00:00:00
+TKT-0136,Yolanda Hernandez,Marketing,Laptop Issue,Laptop overheating during normal usage,Critical,In Progress,,2025-04-03 00:00:00,
+TKT-0218,Uma Walker,Finance,Hardware Request,Requesting standing desk converter,Critical,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2024-09-07 00:00:00,2024-09-08 00:00:00
+TKT-0139,Isabella Anderson,Engineering,Email Access,Cannot receive emails since this morning,Medium,In Progress,,2024-12-12 00:00:00,
+TKT-0001,Henry Taylor,Customer Support,vpn issue,Cannot connect to VPN from home office,Low,Open,,2025-02-04 00:00:00,
+TKT-0184,Mia Harris,Finance,pwd reset,Admin portal login credentials not recognized,Low,Closed,Password reset completed via Active Directory. User notified with new credentials.,2025-01-08 00:00:00,2025-01-16 00:00:00
+TKT-0172,Diana Baker,Legal,Software Installation,Need Microsoft Office 365 installed on new laptop,High,Closed,Software installed successfully with admin credentials. License activated.,2025-02-15 00:00:00,2025-02-25 00:00:00
+TKT-0099,Ethan Adams,Customer Support,VPN Issue,VPN disconnects frequently during video calls,Low,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-05-28 00:00:00,2024-05-31 00:00:00
+TKT-0270,Henry Taylor,Customer Support,Password Reset,Two-factor authentication code not working,Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-05-24 00:00:00,2024-05-28 00:00:00
+TKT-0092,Carlos Green,Finance,Network Issue,Cannot access shared network drives,Medium,In Progress,,2025-04-05 00:00:00,
+TKT-0043,Michael Campbell,Customer Support,Password Reset,"Password expired, cannot login to work systems",High,Closed,Password reset completed via Active Directory. User notified with new credentials.,2025-01-14 00:00:00,2025-01-22 00:00:00
+TKT-0264,Fiona Nelson,Engineering,VPN Issue,VPN client throws authentication error on startup,Medium,In Progress,,2024-07-21 00:00:00,
+TKT-0013,Quinn Robinson,Engineering,Email Access,Unable to access shared team mailbox,Medium,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2024-07-10 00:00:00,2024-07-19 00:00:00
+TKT-0127,Quinn Robinson,Engineering,Software Installation,Requesting installation of project management software,Medium,Closed,Software installed successfully with admin credentials. License activated.,2025-04-11 00:00:00,2025-04-25 00:00:00
+TKT-0030,Ian Perez,HR,Software Installation,"Zoom client not working properly, needs reinstall",Medium,In Progress,,2024-06-08 00:00:00,
+TKT-0142,Ethan Adams,Customer Support,Hardware Req,Requesting standing desk converter,High,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2024-06-08 00:00:00,2024-06-11 00:00:00
+TKT-0254,Frank Miller,Operations,Network Connectivity,Intermittent connection drops throughout the day,Low,Open,,2025-04-14 00:00:00,
+TKT-0154,James Thomas,Marketing,Network Connectivity,Network printer not accessible from laptop,Medium,Closed,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-07-06 00:00:00,2024-07-15 00:00:00
+TKT-0253,Quinn Robinson,Engineering,Email Problem,Unable to access shared team mailbox,Medium,Open,,2024-11-26 00:00:00,
+TKT-0222,Bella Scott,HR,Email Access,Email signature not displaying correctly,Medium,In Progress,,2024-06-10 00:00:00,
+TKT-0237,George Carter,Marketing,HW Request,Requesting docking station for new laptop,Medium,In Progress,,2024-07-22 00:00:00,
+TKT-0031,Julia Roberts,Finance,VPN Issue,"VPN certificate expired, cannot authenticate",Medium,Open,,2024-06-17 00:00:00,
+TKT-0076,Nancy Parker,Marketing,Laptop Issue,Laptop overheating during normal usage,Medium,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2024-06-12 00:00:00,2024-06-23 00:00:00
+TKT-0220,Xavier Young,Customer Support,Software Installation,"Zoom client not working properly, needs reinstall",Medium,Closed,Software installed successfully with admin credentials. License activated.,2024-10-21 00:00:00,2024-10-24 00:00:00
+TKT-0214,Yolanda Hernandez,Marketing,Network Connectivity,Network printer not accessible from laptop,Critical,In Progress,,2024-05-09 00:00:00,
+TKT-0198,Olivia Garcia,Legal,Hardware Req,Requesting standing desk converter,High,Open,,2025-02-01 00:00:00,
+TKT-0018,Liam White,HR,Laptop Issue,"Battery draining within 2 hours, needs replacement",Medium,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2025-03-08 00:00:00,2025-03-12 00:00:00
+TKT-0249,Diana Baker,Legal,Hardware Req,Requesting standing desk converter,Low,In Progress,,2025-03-02 00:00:00,
+TKT-0247,Karen Jackson,Sales,Network Connectivity,Intermittent connection drops throughout the day,High,Open,,2024-07-21 00:00:00,
+TKT-0197,Bella Scott,HR,laptop issue,"Battery draining within 2 hours, needs replacement",Low,In Progress,,2025-01-04 00:00:00,
+TKT-0035,Laura Phillips,Engineering,Laptop Issue,Laptop screen flickering and sometimes goes black,Medium,Open,,2025-01-16 00:00:00,
+TKT-0069,Quinn Robinson,Engineering,Network Connectivity,WiFi signal extremely weak in conference room B,Medium,Closed,Network switch port reset and DHCP lease renewed. Connectivity restored.,2025-01-04 00:00:00,2025-01-15 00:00:00
+TKT-0265,Isabella Anderson,Engineering,Email Access,Calendar invites not appearing in inbox,High,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2025-01-25 00:00:00,2025-01-27 00:00:00
+TKT-0026,Carol Davis,Sales,Network Issue,Ethernet port not detecting cable connection,Medium,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2025-02-01 00:00:00,2025-02-04 00:00:00
+TKT-0028,Bella Scott,HR,Software Installation,Python and pip environment setup required,High,Open,,2025-03-31 00:00:00,
+TKT-0062,Samuel Rodriguez,Sales,Laptop Issue,Keyboard keys sticking and unresponsive,Medium,Closed,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2024-08-29 00:00:00,2024-09-09 00:00:00
+TKT-0096,Grace Lee,Legal,Network Connectivity,WiFi signal extremely weak in conference room B,Low,Open,,2025-01-29 00:00:00,
+TKT-0033,Alice Johnson,Engineering,Hardware Req,Need webcam for remote meetings,Medium,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2025-02-09 00:00:00,2025-02-20 00:00:00
+TKT-0165,Laura Phillips,Engineering,Hardware Request,Need replacement headset for customer calls,High,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2025-04-06 00:00:00,2025-04-19 00:00:00
+TKT-0057,Bella Scott,HR,VPN Issue,Split tunneling not working after recent update,Medium,In Progress,,2024-07-03 00:00:00,
+TKT-0119,Peter Martinez,Customer Support,Software Install,Need Microsoft Office 365 installed on new laptop,Critical,Resolved,Software installed successfully with admin credentials. License activated.,2024-07-09 00:00:00,2024-07-23 00:00:00
+TKT-0134,Diana Baker,Legal,Hardware Request,Requesting docking station for new laptop,Low,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2024-10-24 00:00:00,2024-11-03 00:00:00
+TKT-0258,Xavier Young,Customer Support,Laptop Issue,Touchpad not responding intermittently,Medium,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2024-10-17 00:00:00,2024-10-23 00:00:00
+TKT-0138,Samuel Rodriguez,Sales,Network Connectivity,Ethernet port not detecting cable connection,Low,Open,,2024-09-06 00:00:00,
+TKT-0011,Uma Walker,Finance,Software Installation,"Zoom client not working properly, needs reinstall",High,In Progress,,2025-04-01 00:00:00,
+TKT-0075,Yolanda Hernandez,Marketing,Software Installation,Requesting installation of Adobe Creative Suite,Medium,Open,,2024-12-26 00:00:00,
+TKT-0189,Kevin Turner,Operations,Email Access,Unable to access shared team mailbox,Medium,Open,,2024-06-01 00:00:00,
+TKT-0089,Victor Hall,Engineering,VPN Issue,VPN client throws authentication error on startup,Low,In Progress,,2024-09-10 00:00:00,
+TKT-0262,Ethan Adams,Customer Support,VPN Issue,VPN disconnects frequently during video calls,Low,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-05-28 00:00:00,2024-05-31 00:00:00
+TKT-0236,Isabella Anderson,Engineering,Network Connectivity,Intermittent connection drops throughout the day,Medium,Open,,2024-07-06 00:00:00,
+TKT-0032,Peter Martinez,Customer Support,Password Reset,Two-factor authentication code not working,Low,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-05-31 00:00:00,2024-06-03 00:00:00
+TKT-0225,Zach King,Sales,Software Installation,Requesting installation of project management software,High,Closed,Software installed successfully with admin credentials. License activated.,2024-07-13 00:00:00,2024-07-27 00:00:00
+TKT-0071,Isabella Anderson,Engineering,Password Reset,Two-factor authentication code not working,Low,In Progress,,2024-11-29 00:00:00,
+TKT-0090,Rachel Clark,Marketing,Hardware Request,Requesting second monitor for better productivity,Medium,Open,,2024-08-06 00:00:00,
+TKT-0164,Frank Miller,Operations,Network Issue,No internet connection at workstation,High,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-07-06 00:00:00,2024-07-15 00:00:00
+TKT-0240,Laura Phillips,Engineering,Hardware Request,Requesting USB hub for multiple device connections,Medium,Closed,Hardware ordered and delivered. Setup completed by IT technician.,2024-10-20 00:00:00,2024-11-03 00:00:00
+TKT-0227,Carlos Green,Finance,Hardware Request,Need replacement headset for customer calls,High,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2025-01-27 00:00:00,2025-02-02 00:00:00
+TKT-0167,Ethan Adams,Customer Support,password_reset,Admin portal login credentials not recognized,Low,In Progress,,2024-08-24 00:00:00,
+TKT-0263,Grace Lee,Legal,Network Connectivity,No internet connection at workstation,Low,Open,,2024-10-01 00:00:00,
+TKT-0230,Fiona Nelson,Engineering,pwd reset,Admin portal login credentials not recognized,Medium,Closed,Password reset completed via Active Directory. User notified with new credentials.,2024-12-14 00:00:00,2024-12-16 00:00:00
+TKT-0058,Tina Lewis,HR,Laptop Issue,"Battery draining within 2 hours, needs replacement",Medium,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2025-02-08 00:00:00,2025-02-11 00:00:00
+TKT-0224,Wendy Allen,Operations,Email Access,Calendar invites not appearing in inbox,Medium,Closed,Email configuration corrected in Exchange admin console. Access restored.,2024-05-30 00:00:00,2024-06-01 00:00:00
+TKT-0143,Olivia Garcia,Legal,Network Connectivity,No internet connection at workstation,Critical,Closed,Network switch port reset and DHCP lease renewed. Connectivity restored.,2025-02-10 00:00:00,2025-02-16 00:00:00
+TKT-0072,Victor Hall,Engineering,Laptop Issue,Laptop screen flickering and sometimes goes black,Low,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2025-02-24 00:00:00,2025-03-08 00:00:00
+TKT-0064,Kevin Turner,Operations,Password Reset,"SSO not working, redirecting to error page",Medium,In Progress,,2025-04-01 00:00:00,
+TKT-0268,Peter Martinez,Customer Support,Email Problem,Outlook not syncing with Exchange server,Medium,In Progress,,2024-11-30 00:00:00,
+TKT-0124,Yolanda Hernandez,Marketing,Hardware Request,Need ergonomic keyboard and mouse for workspace,High,Open,,2024-05-19 00:00:00,
+TKT-0252,Zach King,Sales,Hardware Request,Requesting USB hub for multiple device connections,Low,Open,,2025-02-12 00:00:00,
+TKT-0091,Peter Martinez,Customer Support,Email Access,Unable to access shared team mailbox,High,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2025-03-27 00:00:00,2025-04-08 00:00:00
+TKT-0140,Laura Phillips,Engineering,SW Installation,"Antivirus software outdated, requesting update",Medium,Resolved,Software installed successfully with admin credentials. License activated.,2024-08-11 00:00:00,2024-08-14 00:00:00
+TKT-0088,Peter Martinez,Customer Support,Network Connectivity,Intermittent connection drops throughout the day,Low,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2025-03-09 00:00:00,2025-03-20 00:00:00
+TKT-0228,Uma Walker,Finance,Email Problem,Unable to access shared team mailbox,Low,Open,,2025-01-21 00:00:00,
+TKT-0118,James Thomas,Marketing,Laptop Issue,Laptop overheating during normal usage,Medium,In Progress,,2025-01-03 00:00:00,
+TKT-0045,Quinn Robinson,Engineering,Password Reset,"SSO not working, redirecting to error page",High,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-06-27 00:00:00,2024-06-29 00:00:00
+TKT-0179,Uma Walker,Finance,Laptop Issue,Laptop screen flickering and sometimes goes black,High,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2024-06-28 00:00:00,2024-07-05 00:00:00
+TKT-0097,Rachel Clark,Marketing,VPN Problem,Cannot connect to VPN from home office,High,Open,,2025-01-07 00:00:00,
+TKT-0194,James Thomas,Marketing,Software Installation,Python and pip environment setup required,Low,In Progress,,2025-04-01 00:00:00,
+TKT-0196,Isabella Anderson,Engineering,Email Access,Calendar invites not appearing in inbox,High,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2025-01-25 00:00:00,2025-01-27 00:00:00
+TKT-0243,Ethan Adams,Customer Support,Password Reset,Forgot password and need urgent reset,Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2025-04-18 00:00:00,2025-04-19 00:00:00
+TKT-0144,Zach King,Sales,VPN Issue,"VPN connection extremely slow, affecting productivity",Medium,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2025-04-10 00:00:00,2025-04-15 00:00:00
+TKT-0054,Quinn Robinson,Engineering,Password Reset,"Password expired, cannot login to work systems",Medium,Open,,2024-12-09 00:00:00,
+TKT-0250,Ethan Adams,Customer Support,pwd reset,Two-factor authentication code not working,Medium,Closed,Password reset completed via Active Directory. User notified with new credentials.,2024-11-04 00:00:00,2024-11-17 00:00:00
+TKT-0244,Carlos Green,Finance,Software Installation,Python and pip environment setup required,Medium,Open,,2024-10-11 00:00:00,
+TKT-0016,Henry Taylor,Customer Support,Email Access,Unable to access shared team mailbox,Medium,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2024-06-27 00:00:00,2024-07-02 00:00:00
+TKT-0121,Samuel Rodriguez,Sales,Email Access,Emails going to spam folder from internal senders,Medium,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2024-07-16 00:00:00,2024-07-24 00:00:00
+TKT-0241,Carol Davis,Sales,Network Issue,WiFi signal extremely weak in conference room B,Critical,Closed,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-09-13 00:00:00,2024-09-24 00:00:00
+TKT-0129,Emma Brown,Finance,Password Reset,Two-factor authentication code not working,Medium,In Progress,,2024-06-16 00:00:00,
+TKT-0176,Michael Campbell,Customer Support,vpn issue,Cannot connect to VPN from home office,High,Closed,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-09-26 00:00:00,2024-10-02 00:00:00
+TKT-0053,Rachel Clark,Marketing,Software Installation,Need Microsoft Office 365 installed on new laptop,High,Closed,Software installed successfully with admin credentials. License activated.,2024-10-17 00:00:00,2024-10-18 00:00:00
+TKT-0106,Ian Perez,HR,password_reset,Admin portal login credentials not recognized,High,Open,,2024-07-24 00:00:00,
+TKT-0248,George Carter,Marketing,Software Installation,Requesting installation of project management software,Medium,Open,,2024-11-18 00:00:00,
+TKT-0108,Zach King,Sales,Hardware Request,Need replacement headset for customer calls,Medium,Open,,2024-05-21 00:00:00,
+TKT-0081,Henry Taylor,Customer Support,Laptop Issue,Touchpad not responding intermittently,Medium,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2025-03-07 00:00:00,2025-03-17 00:00:00
+TKT-0113,Julia Roberts,Finance,VPN Problem,"VPN connection extremely slow, affecting productivity",Medium,Closed,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-11-23 00:00:00,2024-12-07 00:00:00
+TKT-0221,Fiona Nelson,Engineering,Software Installation,Need Microsoft Office 365 installed on new laptop,Medium,Open,,2024-12-04 00:00:00,
+TKT-0049,Peter Martinez,Customer Support,Network Connectivity,Ethernet port not detecting cable connection,High,Closed,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-05-13 00:00:00,2024-05-16 00:00:00
+TKT-0217,Liam White,HR,Network Connectivity,No internet connection at workstation,Low,In Progress,,2024-08-11 00:00:00,
+TKT-0180,Uma Walker,Finance,Password Reset,Two-factor authentication code not working,Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-11-02 00:00:00,2024-11-04 00:00:00
+TKT-0147,Aaron Wright,Engineering,VPN,"VPN connection extremely slow, affecting productivity",Medium,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-06-19 00:00:00,2024-06-23 00:00:00
+TKT-0009,Michael Campbell,Customer Support,Email Access,Calendar invites not appearing in inbox,Low,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2024-09-16 00:00:00,2024-09-27 00:00:00
+TKT-0063,Olivia Garcia,Legal,Network Issue,Intermittent connection drops throughout the day,Low,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-06-07 00:00:00,2024-06-15 00:00:00
+TKT-0175,Henry Taylor,Customer Support,Password Reset,Two-factor authentication code not working,Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-05-24 00:00:00,2024-05-28 00:00:00
+TKT-0038,Quinn Robinson,Engineering,Software Installation,Need Microsoft Office 365 installed on new laptop,Medium,In Progress,,2024-06-07 00:00:00,
+TKT-0098,Alice Johnson,Engineering,Laptop Issue,Keyboard keys sticking and unresponsive,Medium,Open,,2024-05-27 00:00:00,
+TKT-0159,Carlos Green,Finance,vpn issue,"VPN connection extremely slow, affecting productivity",Low,In Progress,,2025-03-21 00:00:00,
+TKT-0203,Carlos Green,Finance,SW Installation,Requesting installation of Adobe Creative Suite,Medium,Resolved,Software installed successfully with admin credentials. License activated.,2024-07-22 00:00:00,2024-08-05 00:00:00
+TKT-0210,Michael Campbell,Customer Support,laptop issue,Laptop overheating during normal usage,Low,Open,,2024-08-31 00:00:00,
+TKT-0135,Bella Scott,HR,Email Access,Outlook not syncing with Exchange server,Medium,Closed,Email configuration corrected in Exchange admin console. Access restored.,2025-01-03 00:00:00,2025-01-05 00:00:00
+TKT-0044,David Wilson,HR,VPN Issue,Split tunneling not working after recent update,Medium,Open,,2024-07-06 00:00:00,
+TKT-0123,Peter Martinez,Customer Support,laptop issue,Laptop overheating during normal usage,Low,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2025-04-27 00:00:00,2025-05-10 00:00:00
+TKT-0215,Emma Brown,Finance,Software Installation,Need Microsoft Office 365 installed on new laptop,Medium,Closed,Software installed successfully with admin credentials. License activated.,2024-10-18 00:00:00,2024-10-21 00:00:00
+TKT-0014,Frank Miller,Operations,Network Connectivity,Intermittent connection drops throughout the day,Low,Open,,2025-04-14 00:00:00,
+TKT-0185,Kevin Turner,Operations,Network Connectivity,Network printer not accessible from laptop,Critical,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2025-03-22 00:00:00,2025-04-01 00:00:00
+TKT-0059,Aaron Wright,Engineering,Email Access,Email signature not displaying correctly,High,Open,,2025-02-16 00:00:00,
+TKT-0148,Isabella Anderson,Engineering,Software Installation,Requesting installation of project management software,Critical,Resolved,Software installed successfully with admin credentials. License activated.,2025-02-01 00:00:00,2025-02-08 00:00:00
+TKT-0149,James Thomas,Marketing,Hardware Request,Need webcam for remote meetings,High,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2024-09-21 00:00:00,2024-09-22 00:00:00
+TKT-0199,Hannah Mitchell,Sales,VPN Issue,VPN disconnects frequently during video calls,High,Open,,2024-11-09 00:00:00,
+TKT-0201,Xavier Young,Customer Support,email access,Emails going to spam folder from internal senders,Medium,Closed,Email configuration corrected in Exchange admin console. Access restored.,2024-12-16 00:00:00,2024-12-20 00:00:00
+TKT-0168,Bella Scott,HR,Network Connectivity,No internet connection at workstation,High,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2025-03-26 00:00:00,2025-04-04 00:00:00
+TKT-0068,George Carter,Marketing,Software Installation,"Zoom client not working properly, needs reinstall",Medium,Open,,2024-12-30 00:00:00,
+TKT-0223,Samuel Rodriguez,Sales,Password Reset,Account locked after multiple failed login attempts,Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-10-27 00:00:00,2024-11-04 00:00:00
+TKT-0153,Emma Brown,Finance,Network Connectivity,DNS resolution failing for internal hostnames,Medium,Closed,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-08-28 00:00:00,2024-09-03 00:00:00
+TKT-0007,Olivia Garcia,Legal,Network Connectivity,Intermittent connection drops throughout the day,High,Closed,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-11-11 00:00:00,2024-11-16 00:00:00
+TKT-0162,Noah Martin,Operations,Software Installation,Python and pip environment setup required,Medium,Closed,Software installed successfully with admin credentials. License activated.,2024-11-21 00:00:00,2024-11-28 00:00:00
+TKT-0177,Alice Johnson,Engineering,Laptop Issue,"Laptop wont boot, stuck on startup screen",Low,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2024-08-26 00:00:00,2024-09-04 00:00:00
+TKT-0186,Uma Walker,Finance,Password Reset,"Password expired, cannot login to work systems",Medium,Closed,Password reset completed via Active Directory. User notified with new credentials.,2025-02-27 00:00:00,2025-02-28 00:00:00
+TKT-0204,Michael Campbell,Customer Support,VPN Issue,"VPN certificate expired, cannot authenticate",High,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-06-22 00:00:00,2024-07-04 00:00:00
+TKT-0079,Ian Perez,HR,VPN Issue,Cannot connect to VPN from home office,Low,Open,,2025-03-30 00:00:00,
+TKT-0150,Xavier Young,Customer Support,Password Reset,Need password reset for CRM system access,Low,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2025-04-17 00:00:00,2025-04-23 00:00:00
+TKT-0107,Tina Lewis,HR,Email Access,Email signature not displaying correctly,Critical,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2024-12-26 00:00:00,2025-01-07 00:00:00
+TKT-0029,Grace Lee,Legal,VPN Issue,VPN disconnects frequently during video calls,High,Open,,2024-08-07 00:00:00,
+TKT-0173,David Wilson,HR,Password Reset,"SSO not working, redirecting to error page",Low,Open,,2024-12-13 00:00:00,
+TKT-0085,Bella Scott,HR,Email Access,Unable to access shared team mailbox,Medium,Closed,Email configuration corrected in Exchange admin console. Access restored.,2025-01-06 00:00:00,2025-01-08 00:00:00
+TKT-0095,Liam White,HR,Password Reset,"Password expired, cannot login to work systems",Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2025-01-24 00:00:00,2025-02-03 00:00:00
+TKT-0005,Michael Campbell,Customer Support,Password Reset,Need password reset for CRM system access,Medium,Closed,Password reset completed via Active Directory. User notified with new credentials.,2024-11-10 00:00:00,2024-11-12 00:00:00
+TKT-0209,Ethan Adams,Customer Support,Software Install,Requesting installation of project management software,Low,In Progress,,2024-07-16 00:00:00,
+TKT-0251,Diana Baker,Legal,pwd reset,Admin portal login credentials not recognized,High,In Progress,,2025-01-30 00:00:00,
+TKT-0234,Julia Roberts,Finance,VPN Issue,Unable to access internal resources via VPN,Low,Resolved,Reconfigured VPN client settings and updated credentials. Issue resolved.,2025-01-01 00:00:00,2025-01-10 00:00:00
+TKT-0145,Yolanda Hernandez,Marketing,Network Connectivity,Cannot access shared network drives,Low,In Progress,,2024-05-13 00:00:00,
+TKT-0182,Olivia Garcia,Legal,Software Installation,"Cannot install required development tools, admin rights needed",Medium,Resolved,Software installed successfully with admin credentials. License activated.,2024-08-08 00:00:00,2024-08-21 00:00:00
+TKT-0126,Alice Johnson,Engineering,Email Access,Auto-reply not triggering despite being configured,High,Open,,2024-12-27 00:00:00,
+TKT-0137,Rachel Clark,Marketing,VPN Issue,Unable to access internal resources via VPN,High,Closed,Reconfigured VPN client settings and updated credentials. Issue resolved.,2025-03-07 00:00:00,2025-03-19 00:00:00
+TKT-0131,Carol Davis,Sales,password_reset,Two-factor authentication code not working,Medium,Open,,2025-01-27 00:00:00,
+TKT-0213,Frank Miller,Operations,Laptop Issue,Laptop screen flickering and sometimes goes black,Critical,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2025-01-15 00:00:00,2025-01-24 00:00:00
+TKT-0130,Grace Lee,Legal,Network Connectivity,No internet connection at workstation,Low,Open,,2024-10-01 00:00:00,
+TKT-0087,Nancy Parker,Marketing,Network Connectivity,Network printer not accessible from laptop,Medium,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2025-02-28 00:00:00,2025-03-05 00:00:00
+TKT-0152,Michael Campbell,Customer Support,Hardware Req,Need ergonomic keyboard and mouse for workspace,Low,Open,,2025-02-14 00:00:00,
+TKT-0077,Isabella Anderson,Engineering,Network Connectivity,Network printer not accessible from laptop,Medium,In Progress,,2024-10-15 00:00:00,
+TKT-0216,Wendy Allen,Operations,Laptop Issue,Laptop overheating during normal usage,Low,Closed,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2024-12-24 00:00:00,2025-01-05 00:00:00
+TKT-0190,Grace Lee,Legal,Network Connectivity,WiFi signal extremely weak in conference room B,Critical,Open,,2025-03-27 00:00:00,
+TKT-0158,Diana Baker,Legal,email access,Calendar invites not appearing in inbox,High,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2024-06-25 00:00:00,2024-07-03 00:00:00
+TKT-0101,Nancy Parker,Marketing,Password Reset,"Password expired, cannot login to work systems",Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2025-02-26 00:00:00,2025-03-05 00:00:00
+TKT-0042,Grace Lee,Legal,HW Request,Requesting docking station for new laptop,High,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2024-07-19 00:00:00,2024-07-24 00:00:00
+TKT-0082,Henry Taylor,Customer Support,Network Connectivity,Cannot access shared network drives,Low,Open,,2024-10-07 00:00:00,
+TKT-0157,Xavier Young,Customer Support,Laptop Issue,Keyboard keys sticking and unresponsive,Low,Resolved,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2025-04-03 00:00:00,2025-04-12 00:00:00
+TKT-0239,Julia Roberts,Finance,Password Reset,Forgot password and need urgent reset,Medium,Open,,2025-03-25 00:00:00,
+TKT-0084,Tina Lewis,HR,Network Connectivity,Cannot access shared network drives,Low,Closed,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-05-22 00:00:00,2024-05-28 00:00:00
+TKT-0255,Julia Roberts,Finance,Password Reset,"Password expired, cannot login to work systems",Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-12-24 00:00:00,2025-01-05 00:00:00
+TKT-0132,Kevin Turner,Operations,Email Problem,Outlook not syncing with Exchange server,Low,Closed,Email configuration corrected in Exchange admin console. Access restored.,2025-03-14 00:00:00,2025-03-25 00:00:00
+TKT-0229,Julia Roberts,Finance,VPN Issue,VPN client throws authentication error on startup,High,In Progress,,2025-03-10 00:00:00,
+TKT-0156,Bob Smith,Marketing,Password Reset,Admin portal login credentials not recognized,Medium,Resolved,Password reset completed via Active Directory. User notified with new credentials.,2024-12-30 00:00:00,2025-01-07 00:00:00
+TKT-0039,Diana Baker,Legal,Email Access,Outlook not syncing with Exchange server,Low,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2025-01-15 00:00:00,2025-01-20 00:00:00
+TKT-0117,Julia Roberts,Finance,VPN Issue,Cannot connect to VPN from home office,Low,Closed,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-06-28 00:00:00,2024-07-06 00:00:00
+TKT-0133,Fiona Nelson,Engineering,Hardware Req,Requesting standing desk converter,Medium,Resolved,Hardware ordered and delivered. Setup completed by IT technician.,2025-04-07 00:00:00,2025-04-08 00:00:00
+TKT-0122,Ethan Adams,Customer Support,Software Installation,Requesting installation of Adobe Creative Suite,Medium,Resolved,Software installed successfully with admin credentials. License activated.,2024-10-12 00:00:00,2024-10-26 00:00:00
+TKT-0260,Ian Perez,HR,Network Connectivity,No internet connection at workstation,Medium,In Progress,,2025-01-04 00:00:00,
+TKT-0086,Xavier Young,Customer Support,Email Access,Email signature not displaying correctly,High,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2025-01-23 00:00:00,2025-02-03 00:00:00
+TKT-0183,Wendy Allen,Operations,Email Access,Email signature not displaying correctly,High,In Progress,,2024-07-14 00:00:00,
+TKT-0036,Liam White,HR,vpn issue,"VPN connection extremely slow, affecting productivity",Medium,Closed,Reconfigured VPN client settings and updated credentials. Issue resolved.,2025-02-16 00:00:00,2025-02-20 00:00:00
+TKT-0020,Fiona Nelson,Engineering,VPN Issue,Cannot connect to VPN from home office,High,Closed,Reconfigured VPN client settings and updated credentials. Issue resolved.,2024-10-05 00:00:00,2024-10-09 00:00:00
+TKT-0024,Xavier Young,Customer Support,Software Installation,Need Microsoft Office 365 installed on new laptop,Low,In Progress,,2024-10-21 00:00:00,
+TKT-0021,Peter Martinez,Customer Support,Network Connectivity,Cannot access shared network drives,Low,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-06-05 00:00:00,2024-06-18 00:00:00
+TKT-0257,Victor Hall,Engineering,Network Connectivity,WiFi signal extremely weak in conference room B,High,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-09-05 00:00:00,2024-09-10 00:00:00
+TKT-0206,Frank Miller,Operations,Hardware Req,Need replacement headset for customer calls,High,Closed,Hardware ordered and delivered. Setup completed by IT technician.,2024-11-29 00:00:00,2024-11-30 00:00:00
+TKT-0261,Xavier Young,Customer Support,Network Connectivity,Network printer not accessible from laptop,High,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-05-01 00:00:00,2024-05-11 00:00:00
+TKT-0102,Kevin Turner,Operations,Email Access,Outlook not syncing with Exchange server,High,Closed,Email configuration corrected in Exchange admin console. Access restored.,2024-08-15 00:00:00,2024-08-26 00:00:00
+TKT-0074,Ian Perez,HR,Network Connectivity,No internet connection at workstation,Medium,In Progress,,2025-01-04 00:00:00,
+TKT-0188,Frank Miller,Operations,Email Access,Auto-reply not triggering despite being configured,Medium,Resolved,Email configuration corrected in Exchange admin console. Access restored.,2024-05-22 00:00:00,2024-05-30 00:00:00
+TKT-0174,Bella Scott,HR,Laptop Issue,Laptop overheating during normal usage,Medium,Closed,Hardware inspected and repaired/replaced. Unit tested and confirmed working.,2024-06-28 00:00:00,2024-07-04 00:00:00
+TKT-0192,Samuel Rodriguez,Sales,Software Installation,Python and pip environment setup required,High,Open,,2025-03-20 00:00:00,
+TKT-0202,Peter Martinez,Customer Support,Password Reset,Need password reset for CRM system access,Medium,Closed,Password reset completed via Active Directory. User notified with new credentials.,2024-11-05 00:00:00,2024-11-16 00:00:00
+TKT-0050,Victor Hall,Engineering,Network Connectivity,WiFi signal extremely weak in conference room B,High,Resolved,Network switch port reset and DHCP lease renewed. Connectivity restored.,2024-09-05 00:00:00,2024-09-10 00:00:00
+TKT-0066,Hannah Mitchell,Sales,Software Installation,"Antivirus software outdated, requesting update",Critical,Open,,2024-07-08 00:00:00,
+TKT-0061,Diana Baker,Legal,Software Installation,Need Microsoft Office 365 installed on new laptop,Medium,Closed,Software installed successfully with admin credentials. License activated.,2024-07-26 00:00:00,2024-08-06 00:00:00
