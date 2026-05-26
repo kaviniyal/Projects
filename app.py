@@ -704,5 +704,8 @@ def download(thread_id):
                      mimetype="application/pdf")
 
 if __name__ == "__main__":
-    flask_app.run(debug=True, port=8080, use_reloader=False)
+    os.makedirs("outputs", exist_ok=True)
+    port = int(os.environ.get("PORT", 8080))
+    debug = os.environ.get("FLASK_ENV", "production") == "development"
+    flask_app.run(debug=debug, host="0.0.0.0", port=port, use_reloader=False)
 

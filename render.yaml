@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: ai-trip-planner
+    env: python
+    region: singapore          # closest to India; change to oregon/ohio if preferred
+    plan: free
+
+    buildCommand: pip install -r requirements.txt && mkdir -p outputs
+
+    # gunicorn serves the Flask app; 1 worker keeps in-memory LangGraph state consistent
+    startCommand: gunicorn app:flask_app --bind 0.0.0.0:$PORT --workers 1 --timeout 180 --log-level info
+
+    envVars:
+      # ── Required ──────────────────────────────────────────────────────────
+      - key: OPENAI_API_KEY
+        sync: false            # set manually in Render dashboard (never commit)
+
+      # ── LangSmith tracing (optional) ─────────────────────────────────────
+      - key: LANGCHAIN_TRACING_V2
+        value: "false"         # flip to "true" in dashboard to enable tracing
+      - key: LANGCHAIN_API_KEY
+        sync: false            # set in Render dashboard if LANGCHAIN_TRACING_V2=true
+      - key: LANGCHAIN_PROJECT
+        value: trip-planner
+
+      # ── Flask ─────────────────────────────────────────────────────────────
+      - key: FLASK_ENV
+        value: production
+
+      # ── Python version ────────────────────────────────────────────────────
+      - key: PYTHON_VERSION
+        value: "3.11.0"
