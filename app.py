@@ -1,11 +1,11 @@
-﻿“””
+"""
 app.py — Flask web interface for the Multi-Agent Trip Planner
 Run:    python app.py
 Open:   http://localhost:8080
 
 LangServe API runs separately:
     python serve.py  →  http://localhost:8000/docs
-“””
+"""
 import os, uuid, json, datetime as dt, random, operator, re
 from typing import TypedDict, List, Dict, Any, Annotated
 import numpy as np
@@ -15,7 +15,7 @@ from flask import Flask, render_template, request, jsonify, send_file
 from dotenv import load_dotenv
 load_dotenv()
 
-# â”€â”€ ReportLab â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── ReportLab ─────────────────────────────────────────────────────────────────
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
@@ -23,16 +23,16 @@ from reportlab.lib.units import cm
 from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, Table,
                                 TableStyle, PageBreak)
 
-# â”€â”€ LangGraph â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── LangGraph ─────────────────────────────────────────────────────────────────
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
 
 random.seed(42)
 np.random.seed(42)
 
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 #  STATE
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 class TripState(TypedDict, total=False):
     user_id: str
     thread_id: str
@@ -51,9 +51,9 @@ class TripState(TypedDict, total=False):
     pdf_status: Dict[str, Any]
     retry_count: int
 
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 #  LLM WRAPPER
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 USE_REAL_LLM = bool(os.environ.get("OPENAI_API_KEY"))
 if USE_REAL_LLM:
     from langchain_openai import ChatOpenAI
@@ -79,9 +79,9 @@ def llm_call(system: str, user: str) -> str:
         return "A well-planned trip with great experiences ahead."
     return "Acknowledged."
 
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 #  GUARDRAILS
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 class InputGuardrailError(ValueError):
     pass
 
@@ -121,7 +121,7 @@ class InputGuardrails:
             except: errors.append("'days' must be an integer.")
             else:
                 if not (1 <= s["days"] <= self.MAX_DAYS):
-                    errors.append(f"'days' must be 1â€“{self.MAX_DAYS}.")
+                    errors.append(f"'days' must be 1–{self.MAX_DAYS}.")
         if "travelers" in s:
             try: s["travelers"] = int(s["travelers"])
             except: errors.append("'travelers' must be an integer.")
@@ -157,14 +157,14 @@ class InputGuardrails:
             floor = self.MIN_BUDGET_PER_PERSON_PER_DAY * days * travelers
             if budget < floor:
                 raise InputGuardrailError(
-                    f"Budget â‚¹{budget:,.0f} is too low. "
-                    f"Minimum for {travelers} traveller(s) over {days} day(s): â‚¹{floor:,}.")
+                    f"Budget ₹{budget:,.0f} is too low. "
+                    f"Minimum for {travelers} traveller(s) over {days} day(s): ₹{floor:,}.")
 
 GUARDRAILS = InputGuardrails()
 
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 #  TOOLS
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 def tool_get_weather(city: str, start: str, days: int) -> Dict[str, Any]:
     base_temp = {"goa": 30, "manali": 14, "leh": 8, "ooty": 18,
                  "jaipur": 32, "shimla": 16, "kerala": 29,
@@ -179,7 +179,7 @@ def tool_get_weather(city: str, start: str, days: int) -> Dict[str, Any]:
             "high_c": base_temp + rng.randint(-2, 4),
             "low_c":  base_temp - rng.randint(4, 8),
             "conditions": cond,
-            "icon": "â˜€ï¸" if "sunny" in cond else "â›…" if "cloudy" in cond else "ðŸŒ§ï¸",
+            "icon": "☀️" if "sunny" in cond else "⛅" if "cloudy" in cond else "🌧️",
         })
     rain_days = sum(1 for f in forecast if "rain" in f["conditions"])
     return {"city": city, "forecast": forecast,
@@ -193,15 +193,15 @@ def tool_search_transport(origin: str, dest: str, date: str, mode_pref: str) -> 
     options = []
     if mode_pref in ("any","flight"):
         options += [
-            {"mode":"flight","provider":"IndiGo",    "depart":"07:00","arrive":"08:25","price":base,      "icon":"âœˆï¸"},
-            {"mode":"flight","provider":"Air India",  "depart":"10:15","arrive":"11:50","price":base+800,  "icon":"âœˆï¸"},
+            {"mode":"flight","provider":"IndiGo",    "depart":"07:00","arrive":"08:25","price":base,      "icon":"✈️"},
+            {"mode":"flight","provider":"Air India",  "depart":"10:15","arrive":"11:50","price":base+800,  "icon":"✈️"},
         ]
     if mode_pref in ("any","train"):
         options.append({"mode":"train","provider":"Express Train","depart":"20:30","arrive":"10:15+1",
-                        "price":int(base*0.4),"icon":"ðŸš‚"})
+                        "price":int(base*0.4),"icon":"🚂"})
     if mode_pref in ("any","car"):
         options.append({"mode":"car","provider":"Self-drive","depart":"06:00","arrive":"16:00",
-                        "price":int(base*0.6),"icon":"ðŸš—"})
+                        "price":int(base*0.6),"icon":"🚗"})
     options.sort(key=lambda x: x["price"])
     return {"origin": origin, "destination": dest, "options": options,
             "recommended": options[0] if options else {}}
@@ -210,21 +210,21 @@ def tool_search_hotels(city: str, checkin: str, checkout: str,
                        budget_per_night: int, vibe: str) -> Dict[str, Any]:
     catalog = {
         "goa": [
-            {"name":"Taj Fort Aguada",    "stars":5,"price":12000,"tags":["beach","luxury","pool"],"img":"ðŸ–ï¸"},
-            {"name":"The Leela Goa",      "stars":5,"price":18000,"tags":["beach","luxury","spa"], "img":"ðŸŒ´"},
-            {"name":"Lemon Tree Candolim","stars":4,"price":5500, "tags":["beach","mid","nightlife"],"img":"ðŸ‹"},
-            {"name":"Cidade de Goa",      "stars":4,"price":7200, "tags":["beach","couple"],        "img":"ðŸ¨"},
-            {"name":"Backwoods Hostel",   "stars":2,"price":1200, "tags":["budget","solo"],         "img":"ðŸ•ï¸"},
+            {"name":"Taj Fort Aguada",    "stars":5,"price":12000,"tags":["beach","luxury","pool"],"img":"🏖️"},
+            {"name":"The Leela Goa",      "stars":5,"price":18000,"tags":["beach","luxury","spa"], "img":"🌴"},
+            {"name":"Lemon Tree Candolim","stars":4,"price":5500, "tags":["beach","mid","nightlife"],"img":"🍋"},
+            {"name":"Cidade de Goa",      "stars":4,"price":7200, "tags":["beach","couple"],        "img":"🏨"},
+            {"name":"Backwoods Hostel",   "stars":2,"price":1200, "tags":["budget","solo"],         "img":"🏕️"},
         ],
         "manali": [
-            {"name":"Span Resort",       "stars":5,"price":8000, "tags":["mountain","luxury"],"img":"â›°ï¸"},
-            {"name":"Johnson Hotel",     "stars":4,"price":4500, "tags":["mountain","mid"],   "img":"ðŸ”ï¸"},
-            {"name":"Snow Valley",       "stars":3,"price":2500, "tags":["budget"],           "img":"â„ï¸"},
+            {"name":"Span Resort",       "stars":5,"price":8000, "tags":["mountain","luxury"],"img":"⛰️"},
+            {"name":"Johnson Hotel",     "stars":4,"price":4500, "tags":["mountain","mid"],   "img":"🏔️"},
+            {"name":"Snow Valley",       "stars":3,"price":2500, "tags":["budget"],           "img":"❄️"},
         ],
     }
     hotels = catalog.get(city.lower(), [
-        {"name":f"{city} Grand",    "stars":4,"price":4500,"tags":["mid"],    "img":"ðŸ¨"},
-        {"name":f"{city} Heritage", "stars":3,"price":2500,"tags":["budget"], "img":"ðŸ›ï¸"},
+        {"name":f"{city} Grand",    "stars":4,"price":4500,"tags":["mid"],    "img":"🏨"},
+        {"name":f"{city} Heritage", "stars":3,"price":2500,"tags":["budget"], "img":"🏛️"},
     ])
     filt = [h for h in hotels if h["price"] <= budget_per_night]
     if not filt: filt = sorted(hotels, key=lambda h: h["price"])[:2]
@@ -235,24 +235,24 @@ def tool_search_hotels(city: str, checkin: str, checkout: str,
 def tool_explore_places(city: str, interests: List[str]) -> Dict[str, Any]:
     db = {
         "goa": [
-            {"name":"Baga Beach",        "category":"beach",    "rating":4.5,"icon":"ðŸ–ï¸"},
-            {"name":"Calangute Beach",   "category":"beach",    "rating":4.4,"icon":"ðŸ–ï¸"},
-            {"name":"Fort Aguada",       "category":"heritage", "rating":4.3,"icon":"ðŸ°"},
-            {"name":"Old Goa Churches",  "category":"heritage", "rating":4.6,"icon":"â›ª"},
-            {"name":"Tito's Lane",       "category":"nightlife","rating":4.2,"icon":"ðŸŽ¶"},
-            {"name":"Anjuna Flea Market","category":"shopping", "rating":4.1,"icon":"ðŸ›ï¸"},
-            {"name":"Dudhsagar Falls",   "category":"nature",   "rating":4.7,"icon":"ðŸ’§"},
+            {"name":"Baga Beach",        "category":"beach",    "rating":4.5,"icon":"🏖️"},
+            {"name":"Calangute Beach",   "category":"beach",    "rating":4.4,"icon":"🏖️"},
+            {"name":"Fort Aguada",       "category":"heritage", "rating":4.3,"icon":"🏰"},
+            {"name":"Old Goa Churches",  "category":"heritage", "rating":4.6,"icon":"⛪"},
+            {"name":"Tito's Lane",       "category":"nightlife","rating":4.2,"icon":"🎶"},
+            {"name":"Anjuna Flea Market","category":"shopping", "rating":4.1,"icon":"🛍️"},
+            {"name":"Dudhsagar Falls",   "category":"nature",   "rating":4.7,"icon":"💧"},
         ],
         "manali": [
-            {"name":"Rohtang Pass",    "category":"nature",   "rating":4.7,"icon":"â›°ï¸"},
-            {"name":"Solang Valley",   "category":"adventure","rating":4.5,"icon":"ðŸŽ¿"},
-            {"name":"Hadimba Temple",  "category":"heritage", "rating":4.3,"icon":"ðŸ›•"},
-            {"name":"Mall Road",       "category":"shopping", "rating":4.0,"icon":"ðŸ›ï¸"},
+            {"name":"Rohtang Pass",    "category":"nature",   "rating":4.7,"icon":"⛰️"},
+            {"name":"Solang Valley",   "category":"adventure","rating":4.5,"icon":"🎿"},
+            {"name":"Hadimba Temple",  "category":"heritage", "rating":4.3,"icon":"🛕"},
+            {"name":"Mall Road",       "category":"shopping", "rating":4.0,"icon":"🛍️"},
         ],
     }
     items = db.get(city.lower(), [
-        {"name":f"{city} City Centre","category":"sightseeing","rating":4.0,"icon":"ðŸ™ï¸"},
-        {"name":f"{city} Nature Park","category":"nature",     "rating":4.2,"icon":"ðŸŒ¿"},
+        {"name":f"{city} City Centre","category":"sightseeing","rating":4.0,"icon":"🏙️"},
+        {"name":f"{city} Nature Park","category":"nature",     "rating":4.2,"icon":"🌿"},
     ])
     if interests:
         scored = []
@@ -286,9 +286,9 @@ def tool_budget_calculator(transport: Dict, hotel: Dict, nights: int,
         }
     }
 
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 #  MEMORY STORE
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 EMB_DIM = 256
 
 def _embed(text: str) -> np.ndarray:
@@ -318,9 +318,9 @@ class MemoryStore:
 
 GLOBAL_MEMORY = MemoryStore()
 
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 #  AGENTS
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 def user_input_agent(state: TripState) -> TripState:
     prefs = dict(state.get("trip_preferences", {}))
     prefs.setdefault("source", "Bangalore"); prefs.setdefault("destination", "Goa")
@@ -392,7 +392,7 @@ def final_review_agent(state: TripState) -> TripState:
         issues.append("Total cost exceeds budget.")
     rain = sum(1 for d in state["weather_data"]["forecast"] if "rain" in d["conditions"])
     if rain >= 3:
-        issues.append(f"{rain} rainy days â€” consider indoor alternatives.")
+        issues.append(f"{rain} rainy days — consider indoor alternatives.")
     if not state["hotel_data"].get("top_pick"):
         issues.append("No hotel matched the budget.")
     return {"review_status": {"approved": len(issues) == 0, "issues": issues}}
@@ -419,22 +419,22 @@ def orchestrator(state: TripState) -> TripState:
     else:
         rev = state["review_status"]; retries = state.get("retry_count", 0)
         if rev["approved"]:
-            nxt, reason = "memory_update", "Approved â†’ PDF."
+            nxt, reason = "memory_update", "Approved → PDF."
         elif retries >= MAX_RETRIES:
-            nxt, reason = "memory_update", "Max retries â†’ finalize."
+            nxt, reason = "memory_update", "Max retries → finalize."
         else:
             issues = " ".join(rev["issues"]).lower()
             if "budget" in issues or "hotel" in issues:
-                nxt, reason = "hotel", "Over budget â†’ retry hotel."
+                nxt, reason = "hotel", "Over budget → retry hotel."
             elif "rain" in issues:
-                nxt, reason = "places", "Rainy â†’ re-pick attractions."
+                nxt, reason = "places", "Rainy → re-pick attractions."
             else:
                 nxt, reason = "memory_update", "Finalize."
             updates.update({"budget_summary": {}, "itinerary": {}, "review_status": {}})
             updates["retry_count"] = retries + 1
 
     updates["orchestrator_decision"] = {"next": nxt, "reason": reason}
-    updates["messages"] = [{"role": "orchestrator", "content": f"â†’ {nxt}: {reason}"}]
+    updates["messages"] = [{"role": "orchestrator", "content": f"→ {nxt}: {reason}"}]
     return updates
 
 def memory_update_agent(state: TripState) -> TripState:
@@ -452,9 +452,9 @@ def specialists_fanout(state: TripState) -> TripState:
 def route_from_orchestrator(state: TripState) -> str:
     return state["orchestrator_decision"]["next"]
 
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 #  PDF GENERATOR
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 def pdf_generator_agent(state: TripState, out_path: str = "trip_report.pdf") -> TripState:
     p=state["trip_preferences"]; bud=state["budget_summary"]; hot=state["hotel_data"]
     tra=state["transport_data"]; wea=state["weather_data"];   it=state["itinerary"]
@@ -473,13 +473,13 @@ def pdf_generator_agent(state: TripState, out_path: str = "trip_report.pdf") -> 
 
     # Cover
     story += [Spacer(1,3*cm),
-              Paragraph(f"{p['source']} â†’ {p['destination']}", H1),
-              Paragraph(f"{p['days']}-day {p['travel_type']} trip Â· {p['travelers']} traveler(s) Â· "
-                        f"Budget â‚¹{p['budget']:,}", Body),
+              Paragraph(f"{p['source']} → {p['destination']}", H1),
+              Paragraph(f"{p['days']}-day {p['travel_type']} trip · {p['travelers']} traveler(s) · "
+                        f"Budget ₹{p['budget']:,}", Body),
               Spacer(1,0.4*cm),
               Paragraph(f"<b>Headline:</b> {it['headline']}", Body),
               Spacer(1,0.4*cm),
-              Paragraph("âœ“ APPROVED" if rev["approved"] else "âš  Completed with caveats",
+              Paragraph("✓ APPROVED" if rev["approved"] else "⚠ Completed with caveats",
                         ParagraphStyle("st", parent=Body,
                                        textColor=colors.green if rev["approved"] else colors.orange)),
               Spacer(1,0.5*cm),
@@ -502,41 +502,41 @@ def pdf_generator_agent(state: TripState, out_path: str = "trip_report.pdf") -> 
     from reportlab.lib.units import cm as _cm
 
     # Transport
-    story += [Paragraph("Section 1 Â· Transport", H1)]
+    story += [Paragraph("Section 1 · Transport", H1)]
     rec = tra.get("recommended", {})
-    story += [Paragraph(f"<b>Recommended:</b> {rec.get('provider','â€“')} ({rec.get('mode','â€“')}) Â· "
-                        f"{rec.get('depart','â€“')} â†’ {rec.get('arrive','â€“')} Â· "
-                        f"<b>â‚¹{rec.get('price',0):,}</b>", Body), Spacer(1,0.3*cm)]
-    rows = [["Mode","Provider","Depart","Arrive","Price (â‚¹)"]] + [
+    story += [Paragraph(f"<b>Recommended:</b> {rec.get('provider','–')} ({rec.get('mode','–')}) · "
+                        f"{rec.get('depart','–')} → {rec.get('arrive','–')} · "
+                        f"<b>₹{rec.get('price',0):,}</b>", Body), Spacer(1,0.3*cm)]
+    rows = [["Mode","Provider","Depart","Arrive","Price (₹)"]] + [
         [o["mode"],o["provider"],o["depart"],o["arrive"],f"{o['price']:,}"]
         for o in tra.get("options",[])]
     story += [mk_table(rows,[60,120,70,80,80]), PageBreak()]
 
     # Hotel
     top = hot.get("top_pick") or {}
-    story += [Paragraph("Section 2 Â· Hotel", H1),
-              Paragraph(f"<b>Top pick:</b> {top.get('name','â€“')} Â· {top.get('stars',0)}â˜… Â· "
-                        f"â‚¹{top.get('price',0):,}/night", Body), Spacer(1,0.3*cm)]
-    rows = [["Hotel","Stars","â‚¹/night","Tags"]] + [
+    story += [Paragraph("Section 2 · Hotel", H1),
+              Paragraph(f"<b>Top pick:</b> {top.get('name','–')} · {top.get('stars',0)}★ · "
+                        f"₹{top.get('price',0):,}/night", Body), Spacer(1,0.3*cm)]
+    rows = [["Hotel","Stars","₹/night","Tags"]] + [
         [h["name"],h["stars"],f"{h['price']:,}",", ".join(h["tags"])]
         for h in hot.get("candidates",[])]
     story += [mk_table(rows,[160,50,70,130]), PageBreak()]
 
     # Itinerary
-    story += [Paragraph("Section 3 Â· Itinerary", H1)]
+    story += [Paragraph("Section 3 · Itinerary", H1)]
     rows = [["Day","Morning","Afternoon","Evening"]] + [
         [f"Day {d['day']}",d["morning"],d["afternoon"],d["evening"]]
         for d in it["days"]]
     story += [mk_table(rows,[1.5*_cm,5*_cm,5*_cm,5*_cm]), Spacer(1,0.5*cm),
               Paragraph("<b>Weather Forecast</b>", H2)]
-    rows = [["Date","Conditions","HighÂ°C","LowÂ°C"]] + [
+    rows = [["Date","Conditions","High°C","Low°C"]] + [
         [w["date"],w["conditions"],w["high_c"],w["low_c"]]
         for w in wea["forecast"]]
     story += [mk_table(rows,[80,120,60,60], hdr_color=colors.HexColor("#70AD47")), PageBreak()]
 
     # Budget
-    story += [Paragraph("Section 4 Â· Budget", H1)]
-    rows = [["Category","Amount (â‚¹)","%"],
+    story += [Paragraph("Section 4 · Budget", H1)]
+    rows = [["Category","Amount (₹)","%"],
             ["Transport",  f"{bud['transport_cost']:,}", f"{bud['breakdown_pct']['transport']}%"],
             ["Hotel",      f"{bud['hotel_cost']:,}",     f"{bud['breakdown_pct']['hotel']}%"],
             ["Food",       f"{bud['food_cost']:,}",      f"{bud['breakdown_pct']['food']}%"],
@@ -544,30 +544,30 @@ def pdf_generator_agent(state: TripState, out_path: str = "trip_report.pdf") -> 
             ["TOTAL",      f"{bud['total']:,}",           "100%"],
             ["Target",     f"{bud['target']:,}",          ""]]
     story += [mk_table(rows,[120,100,60]), Spacer(1,0.3*cm),
-              Paragraph(f"Under budget by â‚¹{bud['target']-bud['total']:,}" if not bud["over_budget"]
-                        else f"Over budget by â‚¹{bud['total']-bud['target']:,}", Body), PageBreak()]
+              Paragraph(f"Under budget by ₹{bud['target']-bud['total']:,}" if not bud["over_budget"]
+                        else f"Over budget by ₹{bud['total']-bud['target']:,}", Body), PageBreak()]
 
     # Packing
-    story += [Paragraph("Section 5 Â· Packing Checklist", H1)]
+    story += [Paragraph("Section 5 · Packing Checklist", H1)]
     packing = llm_call("You are a travel packing assistant.",
                        f"List 6 items for a {p['travel_type']} trip to {p['destination']}. "
                        f"Weather: {wea['forecast'][0]['conditions']}. Semicolon-separated.")
     for item in [s.strip() for s in packing.replace(",",";").split(";") if s.strip()][:8]:
-        story.append(Paragraph(f"â˜  {item}", Body))
-    story += [PageBreak(), Paragraph("Section 6 Â· Emergency Contacts", H1)]
+        story.append(Paragraph(f"☐  {item}", Body))
+    story += [PageBreak(), Paragraph("Section 6 · Emergency Contacts", H1)]
     rows = [["Service","Number"],["Emergency","112"],["Police","100"],
             ["Ambulance","108"],["Tourist Helpline","1363"],
-            ["Your Hotel", top.get("name","â€“")]]
+            ["Your Hotel", top.get("name","–")]]
     story.append(mk_table(rows,[200,200], hdr_color=colors.HexColor("#C0504D")))
 
     doc.build(story)
     return {"pdf_status": {"path": os.path.abspath(out_path),
                             "generated_at": dt.datetime.now().isoformat()},
-            "messages": [{"role":"system","content":f"PDF â†’ {out_path}"}]}
+            "messages": [{"role":"system","content":f"PDF → {out_path}"}]}
 
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 #  BUILD LANGGRAPH
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 def build_graph():
     g = StateGraph(TripState)
     g.add_node("orchestrator",     orchestrator)
@@ -604,11 +604,11 @@ def build_graph():
     return g.compile(checkpointer=MemorySaver())
 
 WORKFLOW = build_graph()
-print("âœ“ LangGraph workflow compiled.")
+print("✓ LangGraph workflow compiled.")
 
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 #  FLASK APP
-# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# ═══════════════════════════════════════════════════════════════════════════════
 flask_app = Flask(__name__)
 os.makedirs("outputs", exist_ok=True)
 
@@ -642,7 +642,7 @@ def plan():
         # Validate
         raw_query = (f"Plan a {prefs['days']}-day trip to {prefs['destination']} "
                      f"from {prefs['source']} for {prefs['travelers']} traveler(s). "
-                     f"Budget â‚¹{prefs['budget']:,.0f}.")
+                     f"Budget ₹{prefs['budget']:,.0f}.")
         GUARDRAILS.validate_all(raw_query, prefs)
 
         # Run workflow
